@@ -1,0 +1,55 @@
+html {
+  padding: 0;
+  margin: 0;
+}
+
+.articles {
+  box-sizing: border-box;
+  padding: 5px;
+  display: grid;
+  grid-template-columns: repeat(3, 33%);
+  grid-gap: 10px;
+}
+
+.articles--navbar {
+  grid-column: 1 / -1;
+  border: 1px solid black;
+  height: 200px;
+  font-size: 30px;
+}
+
+.articles--item {
+  grid-column-end: span 1;
+  height: 200px;
+  background-image: url("../assets/haski.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid black;
+  color: yellow;
+  font-family: Helvetica Neue;
+  font-size: 22px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.articles--item.double {
+  grid-column-end: span 2;
+}
+
+@media (max-width: 1024px) {
+  .articles {
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+  }
+}
+
+@media (max-width: 480px) {
+  .articles {
+    grid-template-columns: 1fr;
+  }
+
+  .articles--item.double {
+    grid-column-end: span 1;
+  }
+}
